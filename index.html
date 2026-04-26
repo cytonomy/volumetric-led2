@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>volumetric-led2 · neuronal firing</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body {
+        margin: 0; padding: 0;
+        width: 100%; height: 100%;
+        background: #000; color: #aaccff;
+        overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Mono", Menlo, monospace;
+      }
+      canvas { display: block; }
+      #hud {
+        position: fixed; left: 16px; bottom: 16px;
+        font-size: 11px; line-height: 1.5;
+        color: #88aaff; opacity: 0.55;
+        pointer-events: none;
+        text-shadow: 0 0 4px rgba(0,0,0,0.8);
+        max-width: 360px;
+      }
+      #phase {
+        position: fixed; right: 16px; bottom: 16px;
+        font-size: 11px; color: #ddeeff; opacity: 0.6;
+        pointer-events: none;
+        text-align: right;
+        text-shadow: 0 0 4px rgba(0,0,0,0.8);
+      }
+      #title {
+        position: fixed; left: 16px; top: 16px;
+        font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+        color: #88aaff; opacity: 0.4;
+        pointer-events: none;
+      }
+      .hidden { opacity: 0 !important; transition: opacity 0.3s; }
+      #stats { position: fixed; right: 16px; top: 16px; font-size: 10px; color: #88aaff; opacity: 0.4; pointer-events: none; text-align: right; }
+    </style>
+  </head>
+  <body>
+    <div id="title">volumetric-led2 · neuronal firing</div>
+    <div id="stats"></div>
+    <div id="hud">
+      <div>F · fullscreen &nbsp;·&nbsp; M · mic on/off &nbsp;·&nbsp; H · hide UI</div>
+      <div>SPACE · pause/resume &nbsp;·&nbsp; R · reset loop &nbsp;·&nbsp; A · auto-cam</div>
+      <div>1–7 · jump to phase &nbsp;·&nbsp; ←/→ · scrub time</div>
+    </div>
+    <div id="phase"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
